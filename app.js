@@ -1,4 +1,5 @@
 var request = require('unirest')
+
 var userData = {
   id: '516fba70-20d0-11e5-b5f7-727283247c7f',
   name: 'Frederick Bombastion'
@@ -10,11 +11,10 @@ Promise.all([getUserData(userData), getMoreUserData(userData)])
 
 function getUserData(userData) {
   var self = {userData:userData}
-  return new Promise(_getUserData.bind(self))
+  return new Promise(_getUserData)
 }
 
 function _getUserData(resolve, reject) {
-  var userData = this.userData
   request.get('http://mockbin.com/request?username=' + userData.name)
     .end(function (results) {
       if (results.error) {
@@ -26,11 +26,10 @@ function _getUserData(resolve, reject) {
 
 function getMoreUserData(userData) {
   var self = {userData:userData}
-  return new Promise(_getMoreUserData.bind(self))
+  return new Promise(_getMoreUserData)
 }
 
 function _getMoreUserData(resolve, reject) {
-  var userData = this.userData
   request.get('http://mockbin.com/request?userid=' + userData.id)
     .end(function (results) {
       if (results.error) {
