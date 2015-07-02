@@ -4,12 +4,9 @@ var userData = {
   name: 'Frederick Bombastion'
 }
 
-var allResults = []
-var self = {userData:userData}
-getUserData(userData)
-  .then(getMoreUserData.bind(self))
-  .then(afterGetData.bind(self))
-  .catch(errorHandler.bind(self))
+Promise.all([getUserData(userData), getMoreUserData(userData)])
+  .then(afterGetData)
+  .catch(errorHandler)
 
 function getUserData(userData) {
   var self = {userData:userData}
@@ -27,9 +24,8 @@ function _getUserData(resolve, reject) {
     })
 }
 
-function getMoreUserData(results) {
-  var self = this
-  allResults.push(results)
+function getMoreUserData(userData) {
+  var self = {userData:userData}
   return new Promise(_getMoreUserData.bind(self))
 }
 
@@ -45,9 +41,7 @@ function _getMoreUserData(resolve, reject) {
 }
 
 function afterGetData(results) {
-  var self = this
-  allResults.push(results)
-  console.log('Results:', allResults)
+  console.log('Results:', results)
 }
 
 function errorHandler(error){
