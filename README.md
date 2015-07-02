@@ -5,6 +5,26 @@ This repo is the code accompanying the introduction to js promises, presented at
 
 You can find the slides for this presentation at [http://slides.com/trentoswald/promises/live](http://slides.com/trentoswald/promises/live)
 
+## Install
+
+To go through the steps of this presentation, clone this repo:
+
+```bash
+git clone https://github.com/therebelrobot/javascript-promises.git && cd javascript-promises
+```
+
+To go to a specific step, checkout to that branch:
+
+```bash
+git checkout step/1
+```
+
+To run the example:
+
+```bash
+npm start
+```
+
 ## Steps
 
 Each step in the construction of Promises is accompanied by a corresponding git branch.
