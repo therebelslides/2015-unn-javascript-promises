@@ -21,7 +21,7 @@ function _getUserData(resolve, reject) {
   request.get('http://mockbin.com/request?username=' + userData.name)
     .end(function (results) {
       if (results.error) {
-        return reject(error)
+        return reject(new Error('This should throw an error!'))
       }
       resolve(results.body)
     })
