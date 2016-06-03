@@ -5,6 +5,12 @@ This repo is the code accompanying the introduction to js promises, presented at
 
 You can find the slides for this presentation at [http://slides.com/trentoswald/promises/live](http://slides.com/trentoswald/promises/live)
 
+ - https://i.imgur.com/svmAIaH.png 
+ - https://i.imgur.com/80BFkeo.png 
+ - https://i.imgur.com/PHtI4sk.png
+ - https://i.imgur.com/Tan3rzW.png
+ - https://i.imgur.com/utADeOI.png
+
 ## Install
 
 To go through the steps of this presentation, clone this repo:
